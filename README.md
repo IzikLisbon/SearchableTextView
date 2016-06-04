@@ -1,2 +1,5 @@
 # SearchableTextView
-A UITextView that supports search (Swift)
+![Screenshot](SearchableTextView.png)
+
+
+
