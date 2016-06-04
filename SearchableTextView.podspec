@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SearchableTextView"
-  s.version      = "0.1.0"
+  s.version      = "0.1.1"
   s.summary      = "A UITextView with search capabilites."
 
   # This description is used to generate tags and improve search results.
@@ -30,7 +30,6 @@ A UITextView with search capabilites. Matched results can be navigated.
 
   s.homepage     = "https://github.com/IzikLisbon/SearchableTextView"
   s.screenshots  = "https://raw.githubusercontent.com/IzikLisbon/SearchableTextView/master/SearchableTextView.png"
-
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #

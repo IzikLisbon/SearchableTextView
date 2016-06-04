@@ -1,9 +1,5 @@
 //
-//  SearchableTextViewTests.swift
-//  SearchableTextViewTests
-//
-//  Created by Izik Lisbon on 6/4/16.
-//  Copyright © 2016 Izik Lisbon. All rights reserved.
+//  Izik @ Lisbon
 //
 
 import XCTest
@@ -13,24 +9,61 @@ class SearchableTextViewTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+  func test_select_highlight_all_matches_and_mark_the_first_one() {
+    let subject = SearchableTextView()
+    subject.text = "some text - bla. Again with different casing - BLA, and again  - BlaBLA"
+    subject.selectNext("bla", direction: Direction.Down)
+    XCTAssertEqual(4, subject.totalMatches)
+    
+    for match in subject._matches {
+      let str = (subject.text as NSString).substringWithRange(match)
+      XCTAssertEqual(str.lowercaseString, "bla")
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
-    }
+    XCTAssertEqual(subject.matchesIterator, 0)
+  }
+  
+  func test_select_iterate_between_matches_direction_down() {
+    let subject = SearchableTextView()
+    subject.text = "some text - bla. Again with different casing - BLA, and again  - BlaBLA"
+    subject.selectNext("bla", direction: Direction.Down)
+    XCTAssertEqual(subject.matchesIterator, 0)
     
+    subject.selectNext("bla", direction: Direction.Down)
+    XCTAssertEqual(subject.matchesIterator, 1)
+    
+    subject.selectNext("bla", direction: Direction.Down)
+    XCTAssertEqual(subject.matchesIterator, 2)
+    
+    subject.selectNext("bla", direction: Direction.Down)
+    XCTAssertEqual(subject.matchesIterator, 3)
+    
+    subject.selectNext("bla", direction: Direction.Down)
+    XCTAssertEqual(subject.matchesIterator, 0)
+  }
+  
+  func test_select_iterate_between_matches_direction_up() {
+    let subject = SearchableTextView()
+    subject.text = "some text - bla. Again with different casing - BLA, and again  - BlaBLA"
+    subject.selectNext("bla", direction: Direction.Up)
+    XCTAssertEqual(subject.matchesIterator, 3)
+    
+    subject.selectNext("bla", direction: Direction.Up)
+    XCTAssertEqual(subject.matchesIterator, 2)
+    
+    subject.selectNext("bla", direction: Direction.Up)
+    XCTAssertEqual(subject.matchesIterator, 1)
+    
+    subject.selectNext("bla", direction: Direction.Up)
+    XCTAssertEqual(subject.matchesIterator, 0)
+    
+    subject.selectNext("bla", direction: Direction.Up)
+    XCTAssertEqual(subject.matchesIterator, 3)
+  }
 }

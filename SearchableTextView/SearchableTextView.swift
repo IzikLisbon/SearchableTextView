@@ -11,13 +11,15 @@ public enum Direction {
 }
 
 public class SearchableTextView : UITextView {
-  public var searchString = ""
   public var selectedColor = UIColor.yellowColor()
-  public var matchesIterator = -1
   public var searchOptions = NSRegularExpressionOptions.CaseInsensitive
-  private var _matches: [NSRange] = []
-  private var _markingFont: UIFont? = nil
+  public private(set) var searchString = ""
+  public private(set) var matchesIterator = -1
   
+  internal var _matches: [NSRange] = []
+  internal var _markingFont: UIFont? = nil
+  
+  /** The font that is used to mark the current match. */
   public var markingFont: UIFont {
     get {
       guard let markingFont = self._markingFont else {
@@ -32,10 +34,15 @@ public class SearchableTextView : UITextView {
     }
   }
   
+  /** The number of total matches */
   public var totalMatches: Int {
     return self._matches.count
   }
   
+  /** 
+   Highlights all thhe matches of str and mark the first one (or the last one if direction is Up).
+   If this method is called with the same string it will mark the next (or the previous if direction is up) matched string.
+   */
   public func selectNext(str: String, direction: Direction) {
     guard !str.isEmpty else { self.clearSelections(); return; }
     
@@ -54,6 +61,7 @@ public class SearchableTextView : UITextView {
     }
   }
   
+  /** Remove all text attributes. */
   public func clearSelections() {
     self.searchString = ""
     self.attributedText = NSMutableAttributedString(string: self.text)

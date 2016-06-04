@@ -1,9 +1,5 @@
 //
-//  SearchableTextView.h
-//  SearchableTextView
-//
-//  Created by Izik Lisbon on 6/4/16.
-//  Copyright © 2016 Izik Lisbon. All rights reserved.
+//  Izik @ Lisbon
 //
 
 #import <UIKit/UIKit.h>
