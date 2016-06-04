@@ -29,7 +29,7 @@ A UITextView with search capabilites. Matched results can be navigated.
                    DESC
 
   s.homepage     = "https://github.com/IzikLisbon/SearchableTextView"
-  # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
+  s.screenshots  = "https://raw.githubusercontent.com/IzikLisbon/SearchableTextView/master/SearchableTextView.png"
 
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -39,7 +39,7 @@ A UITextView with search capabilites. Matched results can be navigated.
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = "MIT (example)"
+  s.license      = "MIT"
   # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
@@ -53,9 +53,9 @@ A UITextView with search capabilites. Matched results can be navigated.
   #  profile URL.
   #
 
-  s.author             = { "Izik Lisbon" => "izikl@microsoft.com" }
+  s.author             = { "Izik Lisbon" => "izikl@live.com" }
   # Or just: s.author    = "Izik Lisbon"
-  # s.authors            = { "Izik Lisbon" => "izikl@microsoft.com" }
+  # s.authors            = { "Izik Lisbon" => "izikl@live.com" }
   # s.social_media_url   = "http://twitter.com/Izik Lisbon"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -65,7 +65,7 @@ A UITextView with search capabilites. Matched results can be navigated.
   #
 
   # s.platform     = :ios
-  # s.platform     = :ios, "5.0"
+  s.platform     = :ios, "8.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -80,7 +80,7 @@ A UITextView with search capabilites. Matched results can be navigated.
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "http://EXAMPLE/SearchableTextView.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/IzikLisbon/SearchableTextView.git", :tag => "0.1.0" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -91,8 +91,7 @@ A UITextView with search capabilites. Matched results can be navigated.
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
-  s.exclude_files = "Classes/Exclude"
+  s.source_files  = "SearchableTextView/**/*.{swift}"
 
   # s.public_header_files = "Classes/**/*.h"
 
