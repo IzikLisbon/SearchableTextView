@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SearchableTextView"
-  s.version      = "0.1.1"
+  s.version      = "0.1.2"
   s.summary      = "A UITextView with search capabilites."
 
   # This description is used to generate tags and improve search results.
@@ -79,7 +79,7 @@ A UITextView with search capabilites. Matched results can be navigated.
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/IzikLisbon/SearchableTextView.git", :tag => "0.1.1" }
+  s.source       = { :git => "https://github.com/IzikLisbon/SearchableTextView.git", :tag => "0.1.2" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
