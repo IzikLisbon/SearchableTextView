@@ -79,7 +79,7 @@ A UITextView with search capabilites. Matched results can be navigated.
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/IzikLisbon/SearchableTextView.git", :tag => "0.1.0" }
+  s.source       = { :git => "https://github.com/IzikLisbon/SearchableTextView.git", :tag => "0.1.1" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
