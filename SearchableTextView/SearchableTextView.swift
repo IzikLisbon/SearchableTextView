@@ -59,6 +59,8 @@ public class SearchableTextView : UITextView {
     } else {
       self.markPrev()
     }
+    
+    self.scrollRangeToVisible(self._matches[self.matchesIterator])
   }
   
   /** Remove all text attributes. */
