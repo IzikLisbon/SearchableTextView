@@ -29,7 +29,7 @@ class SearchableTextViewTests: XCTestCase {
     XCTAssertEqual(subject.matchesIterator, 0)
   }
   
-  func test_when_text_is_marked_and_another_select_is_made_with_no_match_it_does_not_throw() {
+  func test_when_second_select_find_no_matches_it_does_not_throw() {
     let subject = SearchableTextView()
     subject.text = "text to search in"
     subject.selectNext("in", direction: Direction.Down)
@@ -37,6 +37,26 @@ class SearchableTextViewTests: XCTestCase {
     
     XCTAssertEqual(subject.totalMatches, 0)
     XCTAssertEqual(subject.matchesIterator, -1)
+  }
+  
+  func test_when_second_down_select_finds_more_matches_it_does_not_throw() {
+    let subject = SearchableTextView()
+    subject.text = "texti toi search in"
+    subject.selectNext("in", direction: Direction.Down)
+    subject.selectNext("i", direction: Direction.Down)
+    
+    XCTAssertEqual(subject.totalMatches, 3)
+    XCTAssertEqual(subject.matchesIterator, 0)
+  }
+  
+  func test_when_second_up_select_finds_more_matches_it_does_not_throw() {
+    let subject = SearchableTextView()
+    subject.text = "texti toi search in"
+    subject.selectNext("in", direction: Direction.Up)
+    subject.selectNext("i", direction: Direction.Up)
+    
+    XCTAssertEqual(subject.totalMatches, 3)
+    XCTAssertEqual(subject.matchesIterator, 2)
   }
   
   func test_select_iterate_between_matches_direction_down() {
