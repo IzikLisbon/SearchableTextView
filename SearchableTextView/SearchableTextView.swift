@@ -51,6 +51,7 @@ public class SearchableTextView : UITextView {
       
       self.searchString = str
       self._matches = self.findMatches(self.searchString)
+      guard self._matches.count > 0 else { return }
       self.highlightAll()
     }
     
